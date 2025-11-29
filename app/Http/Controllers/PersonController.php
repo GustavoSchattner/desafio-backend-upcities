@@ -33,7 +33,7 @@ class PersonController extends Controller
     public function store(StorePersonRequest $request)
     {
         Person::create($request->validated());
-        return redirect()->route(people.index)->with('success', 'Person created successfully.');
+        return redirect()->route('people.index')->with('success', 'Person created successfully.');
     }
 
     /**

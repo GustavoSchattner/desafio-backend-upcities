@@ -16,9 +16,9 @@ class StorePersonRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'cpf' => 'required|string|size:11|unique:persons,cpf',
+            'cpf' => 'required|string|size:11|unique:people,cpf',
             'birth_date' => 'required|date',
-            'email' => 'required|email|unique:persons,email',
+            'email' => 'required|email|unique:people,email',
             'phone_number' => 'required|string|max:20',
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',

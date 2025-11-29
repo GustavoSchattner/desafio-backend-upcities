@@ -21,13 +21,13 @@ class UpdatePersonRequest extends FormRequest
      */
     public function rules(): array
     {
-        $id = $this->route('person')->id ?? $this->route('person');
+        $id = $this->route('person')->id;
 
         return [
             'name' => 'required|string|max:255',
-            'cpf' => 'required|string|size:11|unique:people,cpf, {$id}',
+            'cpf' => "required|string|size:11|unique:people,cpf, {$id}",
             'birth_date' => 'required|date',
-            'email' => 'required|email|max:255|unique:people,email, {$id}',
+            'email' => "required|email|max:255|unique:people,email, {$id}",
             'phone_number' => 'required|string|max:20',
             'address' => 'required|string|max:255',
             'city' => 'required|string|max:100',
