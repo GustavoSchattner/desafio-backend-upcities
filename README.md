@@ -39,6 +39,13 @@ Sistema robusto de gerenciamento de pessoas (CRUD) desenvolvido com **Laravel**,
 
 ## 📋 Pré-requisitos
 
+### Documentação Oficial
+
+- 📖 [Laravel Documentation](https://laravel.com/docs)
+- 🐳 [Laravel Sail Documentation](https://laravel.com/docs/sail)
+- 🐋 [Docker Documentation](https://docs.docker.com/)
+- 🪟 [WSL2 Installation Guide](https://docs.microsoft.com/windows/wsl/install)
+
 Escolha seu sistema operacional abaixo:
 
 <details>
