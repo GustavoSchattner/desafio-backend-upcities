@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::resource('people', PersonController::class);
+
+Route::get('/api/cities/{uf}', [PersonController::class, 'getCities'])->name('api.cities');
