@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\StorePersonRequest;
 use App\Http\Requests\UpdatePersonRequest;
 use App\Models\Person;
-use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
@@ -16,6 +14,7 @@ class PersonController extends Controller
     public function index()
     {
         $people = Person::latest()->paginate(10);
+
         return view('people.index', compact('people'));
     }
 
@@ -33,6 +32,7 @@ class PersonController extends Controller
     public function store(StorePersonRequest $request)
     {
         Person::create($request->validated());
+
         return redirect()->route('people.index')->with('success', 'Person created successfully.');
     }
 
@@ -41,7 +41,7 @@ class PersonController extends Controller
      */
     public function show(Person $person)
     {
-       return view('people.show', compact('person')); 
+        return view('people.show', compact('person'));
     }
 
     /**
@@ -58,9 +58,9 @@ class PersonController extends Controller
     public function update(UpdatePersonRequest $request, Person $person)
     {
         $person->update($request->validated());
+
         return redirect()->route('people.index')->with('success', 'Person updated successfully.');
     }
-
 
     /**
      * Remove the specified resource from storage.
@@ -68,6 +68,7 @@ class PersonController extends Controller
     public function destroy(Person $person)
     {
         $person->delete();
+
         return redirect()->route('people.index')->with('success', 'Person deleted successfully.');
     }
 }
