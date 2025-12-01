@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-
     public function up(): void
     {
         Schema::create('people', function (Blueprint $table) {
@@ -17,12 +16,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->string('address');
-            $table->string('city');
-            $table->string('state');
+            $table->string('city_id');
+            $table->string('uf_id');
             $table->timestamps();
         });
     }
-
 
     public function down(): void
     {
