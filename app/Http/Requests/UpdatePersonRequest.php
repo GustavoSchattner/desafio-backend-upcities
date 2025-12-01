@@ -25,13 +25,13 @@ class UpdatePersonRequest extends FormRequest
 
         return [
             'name' => 'required|string|max:255',
-            'cpf' => "required|string|size:11|unique:people,cpf, {$id}",
+            'cpf' => "required|string|max:14|unique:people,cpf, {$id}",
             'birth_date' => 'required|date',
             'email' => "required|email|max:255|unique:people,email, {$id}",
             'phone_number' => 'required|string|max:20',
             'address' => 'required|string|max:255',
-            'city' => 'required|string|max:100',
-            'state' => 'required|string|max:100',
+            'uf_id' => 'required|integer',
+            'city_id' => 'required|integer',
         ];
     }
 }
