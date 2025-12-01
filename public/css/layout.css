@@ -1,0 +1,511 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+button {
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+/* Navbar
+   ========================================================================== */
+
+.navbar {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.1875rem;
+    background-color: #fff;
+}
+
+.navbar-image {
+    width: 9vw;
+    height: auto;
+    object-fit: contain;
+    min-width: 120px;
+}
+
+.nav-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-buttons-container a {
+    color: #3a3a3a;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s;
+}
+
+.nav-buttons-container a:hover {
+    color: #19a487;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+.nav-buttons-container button {
+    color: #19a487;
+    font-size: 1.125rem;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #19a487;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons-container button:hover {
+    background-color: #19a487;
+    color: #fff;
+}
+
+/* Main Content
+   ========================================================================== */
+
+.main-content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+}
+
+/* Footer
+   ========================================================================== */
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2.1875rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.footer-image {
+    width: 10vw;
+    height: auto;
+    object-fit: contain;
+    min-width: 100px;
+}
+
+.whatsapp-contact-container {
+    display: flex;
+    flex-direction: row;
+    color: #19a487;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+.whatsapp-contact-container i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+/* ==========================================================================
+   Table Components
+   ========================================================================== */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.people-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.people-table-header th {
+    background-color: #19a487;
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.people-table-row {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.people-table-data {
+    padding: 15px;
+    color: #3a3a3a;
+    vertical-align: middle;
+}
+
+/* Table Actions
+   ========================================================================== */
+
+.people-edit-link {
+    color: #19a487;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.people-edit-link:hover {
+    text-decoration: underline;
+}
+
+.people-visualize-link {
+    color: #1a1a1a;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.people-visualize-link:hover {
+    text-decoration: underline;
+}
+
+.people-delete-form {
+    display: inline-block;
+}
+
+.people-delete-button {
+    color: #d32f2f;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.people-delete-button:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-container nav > div:first-child {
+    display: none;
+}
+
+.pagination-container p {
+    display: none;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.page-item .page-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #19a487;
+    background-color: #fff;
+    border: 1px solid #19a487;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.page-item .page-link:hover {
+    background-color: #19a487;
+    color: #fff;
+}
+
+.page-item.active .page-link {
+    background-color: #19a487;
+    color: #fff;
+    border-color: #19a487;
+    cursor: default;
+}
+
+.page-item.disabled .page-link {
+    color: #ccc;
+    border-color: #e0e0e0;
+    background-color: #f9f9f9;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Form Components
+   ========================================================================== */
+
+.form-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-header h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+
+/* Form Groups
+   ========================================================================== */
+
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.half-width {
+    flex: 1;
+}
+
+/* Form Inputs
+   ========================================================================== */
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+input:focus,
+select:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+/* Form Validation
+   ========================================================================== */
+
+.input-error {
+    border-color: #e74c3c;
+    background-color: #fdf2f2;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+/* Danger Zone
+   ========================================================================== */
+
+.danger-zone {
+    margin-top: 2rem;
+    border-top: 4px solid #e74c3c;
+}
+
+.danger-zone .form-header h3 {
+    color: #c0392b;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.danger-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.danger-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Form Actions
+   ========================================================================== */
+
+.form-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* ==========================================================================
+   Details View - Visualização de Pessoa
+   ========================================================================== */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.detail-item {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid #19a487;
+}
+
+.detail-item strong {
+    display: block;
+    color: #19a487;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.detail-item p {
+    color: #333;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #4caf50;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 600px) {
+    .navbar,
+    .footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .nav-buttons-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-buttons-container a {
+        margin-right: 0;
+    }
+
+    .people-table-data,
+    .people-table-header th {
+        padding: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .danger-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
