@@ -13,7 +13,7 @@ class Person extends Model
         'email',
         'phone_number',
         'address',
-        'city',
-        'state',
+        'city_id',
+        'uf_id',
     ];
 }
